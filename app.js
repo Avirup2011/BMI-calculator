@@ -163,10 +163,13 @@ radioButtons.forEach((btn) => {
 });
 
 // Window rezise event
-window.addEventListener('resize', e=> {
-  if(window.innerWidth < 768) {
-    document.querySelector('.metric').style.display = 'block'
-  } else {
-    document.querySelector('.metric').style.display = 'flex'
+window.addEventListener('resize', () => {
+  if (metricBtn.classList.contains('active')) {
+    const metricSection = document.querySelector('.metric');
+    if (window.innerWidth < 768) {
+      metricSection.style.display = 'block';
+    } else {
+      metricSection.style.display = 'flex';
+    }
   }
-})
+});
